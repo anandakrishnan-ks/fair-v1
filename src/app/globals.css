@@ -1,0 +1,263 @@
+@font-face {
+  font-family: 'Govind Serif';
+  src: url('/fonts/Govind-BF6a4b55e1a2604.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0b0b0b;
+  --bg-soft: #111111;
+  --panel: rgba(27, 27, 27, 0.86);
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #f5f5f0;
+  --muted: #cfcfcf;
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 28%), linear-gradient(135deg, #070707, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Govind Serif', serif;
+  letter-spacing: 0.02em;
+}
+
+.glass-nav {
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand-mark {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 10px 30px rgba(0,0,0,0.35);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.brand-name {
+  font-family: 'Govind Serif', serif;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding: 8rem 0 4rem;
+  position: relative;
+  display: flex; align-items: center;
+  background: linear-gradient(120deg, rgba(255,255,255,0.04), transparent 30%), url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80') center/cover;
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+}
+
+.hero-copy {
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.hero-card, .collection-card, .language-card, .video-panel, .auth-card, .video-shell {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+}
+
+.hero-card {
+  border-radius: 28px;
+  padding: 2rem;
+  min-height: 280px;
+}
+
+.hero-card-inner {
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.btn-luxury, .btn-outline-light {
+  border-radius: 999px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.btn-luxury {
+  background: linear-gradient(135deg, #ffffff, #cfcfcf);
+  color: #0b0b0b;
+  border: none;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.14);
+}
+
+.btn-luxury:hover, .btn-outline-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255,255,255,0.15);
+}
+
+.collection-card, .language-card {
+  display: block;
+  border-radius: 24px;
+  padding: 1.4rem;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.collection-card:hover, .language-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+.collection-card-inner, .language-card-inner {
+  border-radius: 20px;
+  padding: 1.2rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  height: 100%;
+}
+
+.icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: grid; place-items: center;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  font-size: 1.4rem;
+}
+
+.learn-more {
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.auth-page {
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 35%), #060606;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid; place-items: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: min(100%, 440px);
+  padding: 2.2rem;
+  border-radius: 28px;
+}
+
+.form-control {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  border-color: rgba(255,255,255,0.32);
+  box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.12);
+}
+
+.video-shell {
+  position: relative; overflow: hidden; border-radius: 30px; padding: 0.9rem;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 9 / 16;
+  border-radius: 24px;
+  background: #000;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute; inset: 0; pointer-events: none;
+}
+
+.watermark {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: drift 8s ease-in-out infinite;
+}
+
+.video-panel {
+  border-radius: 28px; padding: 1.6rem;
+}
+
+.progress-bar {
+  width: 100%; height: 8px; background: rgba(255,255,255,0.12); border-radius: 999px; overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%; height: 100%; background: linear-gradient(90deg, #ffffff, #cfcfcf); transition: width 0.25s ease;
+}
+
+.language-icon {
+  font-size: 1.7rem; margin-bottom: 0.85rem; color: #eaeaea;
+}
+
+.language-footer {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; color: var(--muted);
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(40px, 18px, 0); }
+}
+
+@media (max-width: 768px) {
+  .hero-section { padding-top: 6rem; }
+  .hero-copy { font-size: 1rem; }
+}
