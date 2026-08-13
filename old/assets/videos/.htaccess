@@ -1,2 +1,0 @@
-# Videos must only be served through the authenticated stream.php endpoint.
-Require all denied

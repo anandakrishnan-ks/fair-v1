@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# video files (large assets — store locally, not in git)
+/videos/*.mp4
+/videos/*.mov
+/videos/*.avi
+/videos/*.mkv
