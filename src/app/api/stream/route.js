@@ -18,8 +18,8 @@ export async function GET(request) {
   }
 
   const fileName = `${courseId}-${language}.mp4`;
-  // Path to the old assets directory where videos are stored
-  const filePath = path.join(process.cwd(), 'old', 'assets', 'videos', fileName);
+  // Videos stored in the /videos folder at the project root
+  const filePath = path.join(process.cwd(), 'videos', fileName);
 
   try {
     const stat = fs.statSync(filePath);
