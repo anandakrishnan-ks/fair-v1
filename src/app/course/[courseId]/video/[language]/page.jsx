@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, use } from 'react';
+import { useEffect, useRef, use } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { COURSES } from '@/lib/data';
@@ -18,9 +18,10 @@ export default function VideoPage({ params }) {
   useEffect(() => {
     // Anti-Piracy: Pause on window blur
     const handleBlur = () => {
-      if (videoRef.current && !videoRef.current.paused) {
-        videoRef.current.pause();
-      }
+      videoRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+        'https://www.youtube-nocookie.com'
+      );
     };
     
     // Anti-Piracy: Prevent dev tools shortcuts
@@ -64,16 +65,16 @@ export default function VideoPage({ params }) {
 
       <div className="video-panel">
         <div className="video-shell">
-          <video 
-            ref={videoRef}
-            className="video-player"
-            controls
-            controlsList="nodownload"
-            disablePictureInPicture
-            src={`/api/stream?courseId=${courseId}&language=${language}`}
-          >
-            Your browser does not support HTML5 video.
-          </video>
+          <div className="video-player">
+            <iframe
+              ref={videoRef}
+              className="video-embed"
+              src={`https://www.youtube-nocookie.com/embed/${course.languages[language].videoId}?controls=1&rel=0&playsinline=1&iv_load_policy=3&enablejsapi=1`}
+              title={`${course.languages[language].label} hair care video`}
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
           <div className="video-overlay">
             <div className="watermark">fair2026</div>
           </div>

@@ -205,14 +205,22 @@ h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .display-5, .display
 }
 
 .video-player {
+  position: relative;
   width: 100%;
   max-width: 420px;
   aspect-ratio: 9 / 16;
   border-radius: 24px;
   background: #000;
-  object-fit: contain;
   margin: 0 auto;
-  display: block;
+  overflow: hidden;
+}
+
+.video-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .video-overlay {
